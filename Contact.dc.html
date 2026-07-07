@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans:wght@300;400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F7F0E3; color: #1A1A1A; text-wrap: pretty; }
+</style>
+</helmet>
+
+<!-- NAV -->
+<nav id="main-nav" style="position:sticky;top:0;z-index:100;background:#3B1740;padding:0 60px;height:76px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow 0.3s ease;">
+  <a href="Home.dc.html" style="display:block;text-decoration:none;">
+    <img src="uploads/os-logo-aubergine.svg" alt="Osanna Studio" style="height:52px;width:auto;display:block;">
+  </a>
+  <div style="display:flex;align-items:center;gap:36px;">
+    <a href="Home.dc.html" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;color:rgba(247,240,227,0.8);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Home</a>
+    <a href="Services.dc.html" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;color:rgba(247,240,227,0.8);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Services</a>
+    <a href="About.dc.html" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;color:rgba(247,240,227,0.8);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">About</a>
+    <a href="Contact.dc.html" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;color:#FFC20E;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Contact</a>
+    <a href="Contact.dc.html" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;color:#3B1740;background:#FFC20E;padding:11px 28px;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;display:inline-block;">Get Started</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section style="background:#3B1740;padding:88px 60px;position:relative;overflow:hidden;min-height:380px;display:flex;align-items:center;">
+  <div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:52vw;max-width:640px;pointer-events:none;">
+    <img src="uploads/5.png" alt="" style="width:100%;opacity:0.07;display:block;">
+  </div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,#3B1740 44%,transparent);pointer-events:none;"></div>
+  <div style="max-width:1240px;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;position:relative;z-index:1;">
+    <div>
+      <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#C84060;letter-spacing:0.25em;text-transform:uppercase;margin:0 0 20px;">Get in Touch</p>
+      <h1 style="font-family:'Unna',serif;font-size:clamp(40px,5vw,60px);line-height:1.1;color:#F7F0E3;margin:0 0 20px;">Tell us where<br><em>it feels scattered.</em></h1>
+      <p style="font-family:'Nunito Sans',sans-serif;font-size:17px;line-height:1.75;color:rgba(247,240,227,0.68);max-width:420px;margin:0;">A few details help us come prepared to the first call. No obligation, no hard sell.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <div style="display:flex;align-items:flex-start;gap:20px;">
+        <div style="width:40px;height:40px;background:rgba(255,194,14,0.12);border:1px solid rgba(255,194,14,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span style="font-family:'Quicksand',sans-serif;font-size:16px;color:#FFC20E;">◷</span>
+        </div>
+        <div>
+          <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:rgba(247,240,227,0.42);letter-spacing:0.15em;text-transform:uppercase;margin:0 0 4px;">Response Time</p>
+          <p style="font-family:'Nunito Sans',sans-serif;font-size:16px;color:rgba(247,240,227,0.85);margin:0;">Within 2 business days</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section style="background:#F7F0E3;padding:100px 60px;">
+  <div style="max-width:800px;margin:0 auto;" data-reveal="">
+    <sc-if value="{{ isSubmitted }}" hint-placeholder-val="{{ false }}">
+      <!-- Thank you state -->
+      <div style="text-align:center;padding:80px 40px;background:#EDE7D5;border:2px solid #3B1740;">
+        <img src="uploads/os-classica-tagline-black.png" alt="" style="height:80px;width:auto;display:block;margin:0 auto 32px;">
+        <h2 style="font-family:'Unna',serif;font-size:clamp(32px,3.5vw,44px);color:#3E6540;margin:0 0 16px;line-height:1.2;">Message received.</h2>
+        <p style="font-family:'Nunito Sans',sans-serif;font-size:17px;line-height:1.8;color:rgba(26,26,26,0.65);max-width:460px;margin:0 auto 36px;">We'll review your message and get back to you within 2 business days. In the meantime, feel free to explore our work.</p>
+        <a href="Services.dc.html" style="display:inline-flex;align-items:center;gap:8px;font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;color:#F7F0E3;background:#C84060;padding:13px 28px;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Explore Our Services →</a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isNotSubmitted }}" hint-placeholder-val="{{ true }}">
+      <div>
+        <h2 style="font-family:'Unna',serif;font-size:clamp(30px,3vw,40px);line-height:1.1;color:#3E6540;margin:0 0 8px;">Start the conversation.</h2>
+        <p style="font-family:'Nunito Sans',sans-serif;font-size:17px;line-height:1.75;color:rgba(26,26,26,0.6);margin:0 0 48px;">Fill in the form and we'll come prepared.</p>
+
+        <form onSubmit="{{ handleSubmit }}" style="display:flex;flex-direction:column;gap:28px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+            <div>
+              <label style="display:block;font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:rgba(26,26,26,0.5);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">Name *</label>
+              <input type="text" name="name" required="" placeholder="Your full name" style="width:100%;padding:14px 18px;border:1.5px solid rgba(59,23,64,0.2);background:#EDE7D5;font-family:'Nunito Sans',sans-serif;font-size:15px;color:#1A1A1A;outline:none;" style-focus="border-color:#3B1740;">
+            </div>
+            <div>
+              <label style="display:block;font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:rgba(26,26,26,0.5);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">Email *</label>
+              <input type="email" name="email" required="" placeholder="you@company.com" style="width:100%;padding:14px 18px;border:1.5px solid rgba(59,23,64,0.2);background:#EDE7D5;font-family:'Nunito Sans',sans-serif;font-size:15px;color:#1A1A1A;outline:none;" style-focus="border-color:#3B1740;">
+            </div>
+          </div>
+          <div>
+            <label style="display:block;font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:rgba(26,26,26,0.5);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">Business name</label>
+            <input type="text" name="business" placeholder="Your business name" style="width:100%;padding:14px 18px;border:1.5px solid rgba(59,23,64,0.2);background:#EDE7D5;font-family:'Nunito Sans',sans-serif;font-size:15px;color:#1A1A1A;outline:none;" style-focus="border-color:#3B1740;">
+          </div>
+          <div>
+            <label style="display:block;font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:rgba(26,26,26,0.5);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">Where's your business right now?</label>
+            <select name="stage" style="width:100%;padding:14px 18px;border:1.5px solid rgba(59,23,64,0.2);background:#EDE7D5;font-family:'Nunito Sans',sans-serif;font-size:15px;color:#1A1A1A;outline:none;appearance:none;">
+              <option value="">Select one...</option>
+              <option value="early">Early-stage — finding our voice</option>
+              <option value="established">Established — sharpening our edge</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:rgba(26,26,26,0.5);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">Where does it feel scattered? *</label>
+            <textarea name="message" required="" rows="5" placeholder="Tell us about the disconnect — your website, your messaging, your content, or all of the above..." style="width:100%;padding:14px 18px;border:1.5px solid rgba(59,23,64,0.2);background:#EDE7D5;font-family:'Nunito Sans',sans-serif;font-size:15px;color:#1A1A1A;outline:none;resize:vertical;min-height:140px;" style-focus="border-color:#3B1740;"></textarea>
+          </div>
+          <div>
+            <button type="submit" style="display:inline-flex;align-items:center;gap:12px;font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;color:#3B1740;background:#FFC20E;padding:16px 40px;border:none;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;">Send it over →</button>
+          </div>
+        </form>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#160E1C;padding:72px 60px 40px;">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:56px;margin-bottom:56px;">
+      <div>
+        <img src="uploads/os-logo-dark-gray-purple.svg" alt="Osanna Studio" style="height:56px;width:auto;display:block;margin-bottom:20px;">
+        <p style="font-family:'Nunito Sans',sans-serif;font-size:14px;line-height:1.8;color:rgba(247,240,227,0.42);max-width:240px;margin:0;">Turning fragmented communication into cohesive brand presence. Working with clients worldwide.</p>
+      </div>
+      <div>
+        <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 20px;">Navigate</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="Home.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">Home</a>
+          <a href="Services.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">Services</a>
+          <a href="About.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">About</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 20px;">Services</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="Services.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">The Anchor</a>
+          <a href="Services.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">The Platform</a>
+          <a href="Services.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">The Velocity</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 20px;">Connect</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="Contact.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(247,240,227,0.07);padding-top:28px;display:flex;justify-content:space-between;align-items:center;">
+      <p style="font-family:'Nunito Sans',sans-serif;font-size:12px;color:rgba(247,240,227,0.25);margin:0;">© 2025 Osanna Studio. Raised under House of Osanna LLC. All rights reserved.</p>
+      <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#C84060;margin:0;letter-spacing:0.15em;text-transform:uppercase;">Radiate Your Purpose</p>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { submitted: false };
+
+  renderVals() {
+    return {
+      isSubmitted: this.state.submitted,
+      isNotSubmitted: !this.state.submitted,
+      handleSubmit: (e) => {
+        e.preventDefault();
+        this.setState({ submitted: true });
+      }
+    };
+  }
+
+  componentDidMount() {
+    const reveals = document.querySelectorAll('[data-reveal]');
+    reveals.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = 'opacity 0.75s ease, transform 0.75s ease';
+    });
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => io.observe(el));
+    const nav = document.getElementById('main-nav');
+    const onScroll = () => {
+      if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.35)' : 'none';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    this._cleanup = () => { io.disconnect(); window.removeEventListener('scroll', onScroll); };
+  }
+  componentWillUnmount() { if (this._cleanup) this._cleanup(); }
+}
+</script>
+</body>
+</html>
