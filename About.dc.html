@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&amp;family=Nunito+Sans:wght@300;400;600;700&amp;family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F7F0E3; color: #1A1A1A; text-wrap: pretty; }
+</style>
+</helmet>
+
+<!-- NAV -->
+<nav id="main-nav" style="position:sticky;top:0;z-index:100;background:#3B1740;padding:0 60px;height:76px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow 0.3s ease;">
+  <a href="Home.dc.html" style="display:block;text-decoration:none;">
+    <img src="uploads/os-logo-aubergine.svg" alt="Osanna Studio" style="height:52px;width:auto;display:block;">
+  </a>
+  <div style="display:flex;align-items:center;gap:36px;">
+    <a href="Home.dc.html" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;color:rgba(247,240,227,0.8);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Home</a>
+    <a href="Services.dc.html" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;color:rgba(247,240,227,0.8);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Services</a>
+    <a href="About.dc.html" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;color:#FFC20E;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">About</a>
+    <a href="Contact.dc.html" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;color:#3B1740;background:#FFC20E;padding:11px 28px;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;display:inline-block;">Get Started</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section style="background:#3B1740;padding:88px 60px;position:relative;overflow:hidden;min-height:340px;display:flex;align-items:center;">
+  <div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:52vw;max-width:640px;pointer-events:none;">
+    <img src="uploads/5.png" alt="" style="width:100%;opacity:0.07;display:block;">
+  </div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,#3B1740 44%,transparent);pointer-events:none;"></div>
+  <div style="max-width:1240px;width:100%;margin:0 auto;position:relative;z-index:1;">
+    <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#C84060;letter-spacing:0.25em;text-transform:uppercase;margin:0 0 20px;">Know the Studio</p>
+    <h1 style="font-family:'Unna',serif;font-size:clamp(44px,5vw,68px);line-height:1.08;color:#F7F0E3;margin:0 0 20px;">About</h1>
+    <p style="font-family:'Nunito Sans',sans-serif;font-size:18px;line-height:1.75;color:rgba(247,240,227,0.7);max-width:520px;margin:0;">The practice behind every scattered-to-cohesive shift.</p>
+  </div>
+</section>
+
+
+
+<!-- BRIDGE -->
+<section style="background:#F7F0E3;padding:80px 60px;">
+  <div style="max-width:800px;margin:0 auto;text-align:center;" data-reveal="">
+    <p style="font-family:'Nunito Sans',sans-serif;font-size:18px;line-height:1.85;color:rgba(59,23,64,0.72);margin:0 0 20px;">A confusing website, a message that shifts from platform to platform, a brand that looks like three different companies. We help close that gap.</p>
+
+  </div>
+</section>
+
+<!-- ABOUT PRIYA -->
+<section style="background:#3B1740;padding:100px 60px;position:relative;overflow:hidden;">
+  <div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:44vw;max-width:560px;pointer-events:none;">
+    <img src="uploads/5.png" alt="" style="width:100%;opacity:0.06;display:block;">
+  </div>
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:340px 1fr;gap:80px;align-items:start;position:relative;z-index:1;" data-reveal="">
+    <!-- Photo -->
+    <div>
+      <div style="aspect-ratio:3/4;overflow:hidden;">
+        <img src="uploads/priya-photo.jpg" alt="Priya Osanna Smith" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+      </div>
+    </div>
+    <!-- Bio text -->
+    <div>
+      <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.25em;text-transform:uppercase;margin:0 0 20px;">The Founder</p>
+      <h2 style="font-family:'Unna',serif;font-size:clamp(32px,3.5vw,46px);line-height:1.1;color:#F7F0E3;margin:0 0 8px;">Priya Osanna Smith</h2>
+      <p style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;color:rgba(247,240,227,0.5);letter-spacing:0.08em;margin:0 0 32px;">Brand Strategist &amp; Creative Director</p>
+      <p style="font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.85;color:rgba(247,240,227,0.75);margin:0 0 20px;">I turn scattered communication into cohesive brand presence that builds trust and growth.</p>
+      <p style="font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.85;color:rgba(247,240,227,0.75);margin:0 0 20px;">As Founder of Osanna Studio, I work at the intersection of branding, website design, content, and strategy to help businesses show up with greater clarity, credibility, and alignment. I work closely with clients who have strong ideas and real ambition, but need a more cohesive way to communicate what makes them distinct.</p>
+      <p style="font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.85;color:rgba(247,240,227,0.75);margin:0 0 20px;">Over the past 20 years, I've worked across communications, digital design, and marketing, and I've seen how much difference a thoughtful, well-aligned presence can make. The best results come from listening closely, understanding the business deeply, and building with intention rather than adding more noise.</p>
+      <p style="font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.85;color:rgba(247,240,227,0.75);margin:0 0 32px;">At Osanna Studio, I work with a small, curated team of specialists to shape brand and digital experiences that feel purposeful, modern, and credible.</p>
+
+      <p style="font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.85;color:rgba(247,240,227,0.75);margin:0 0 32px;">I care about helping clients create a presence that reflects the quality of their work and supports what they're building next.</p>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;color:#FFC20E;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid rgba(255,194,14,0.4);padding-bottom:3px;">Connect on LinkedIn →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ORIGIN + MEANING (2 columns) -->
+<section style="background:#F7F0E3;padding:100px 60px;">
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;">
+    <div data-reveal="" data-reveal-delay="0">
+      <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#C84060;letter-spacing:0.25em;text-transform:uppercase;margin:0 0 20px;">The Origin</p>
+      <h2 style="font-family:'Unna',serif;font-size:clamp(28px,3vw,38px);line-height:1.2;color:#3E6540;margin:0 0 24px;">Scattered problems.<br><em>One proven system.</em></h2>
+      <p style="font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.85;color:rgba(26,26,26,0.7);margin:0;">The Cohesion Framework didn't start as a slide deck. It came out of doing the work: aligning identity, platform, and content for businesses that needed all three to finally agree with each other. Every brand that comes to us gets that same care, built fresh around what they actually need.</p>
+    </div>
+    <div data-reveal="" data-reveal-delay="120">
+      <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#C84060;letter-spacing:0.25em;text-transform:uppercase;margin:0 0 20px;">What "Osanna" Means</p>
+      <h2 style="font-family:'Unna',serif;font-size:clamp(28px,3vw,38px);line-height:1.2;color:#3E6540;margin:0 0 24px;">More than a name.<br><em>A standard we hold.</em></h2>
+      <p style="font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.85;color:rgba(26,26,26,0.7);margin:0;">Osanna is a Latin name meaning "full of mercy," an old idea at its core: not a reward that's earned, but the patience extended before proving anything. That's the same principle behind how we work. We don't wait for a brand to already be polished before we take it seriously; we meet the scatter as it is, and build the clarity from there.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section style="background:#3B1740;padding:100px 60px;">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:64px;" data-reveal="">
+      <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.25em;text-transform:uppercase;margin:0 0 20px;">How We Work</p>
+      <h2 style="font-family:'Unna',serif;font-size:clamp(32px,3.5vw,46px);line-height:1.1;color:#F7F0E3;margin:0;">Four principles.<br><em>Every engagement.</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,194,14,0.15);padding:44px 40px;" data-reveal="" data-reveal-delay="0">
+        <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 14px;">Directional, not dictatorial</p>
+        <p style="font-family:'Nunito Sans',sans-serif;font-size:15px;line-height:1.8;color:rgba(247,240,227,0.68);margin:0;">We guide, we don't dictate. Documentation and strategy are built as directional guidance, idea pools you can run with, not rigid checklists that box in your team's creative judgment.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,194,14,0.15);padding:44px 40px;" data-reveal="" data-reveal-delay="100">
+        <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 14px;">Detail over decoration</p>
+        <p style="font-family:'Nunito Sans',sans-serif;font-size:15px;line-height:1.8;color:rgba(247,240,227,0.68);margin:0;">Every element earns its place. We push back on our own work until each color, font, and phrase is genuinely distinct, not a variation of something adjacent.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,194,14,0.15);padding:44px 40px;" data-reveal="" data-reveal-delay="0">
+        <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 14px;">Sample-first</p>
+        <p style="font-family:'Nunito Sans',sans-serif;font-size:15px;line-height:1.8;color:rgba(247,240,227,0.68);margin:0;">You see it before it scales. We show real samples before committing to large-scale production, so course corrections happen early, not after launch.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,194,14,0.15);padding:44px 40px;" data-reveal="" data-reveal-delay="100">
+        <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 14px;">Built to last</p>
+        <p style="font-family:'Nunito Sans',sans-serif;font-size:15px;line-height:1.8;color:rgba(247,240,227,0.68);margin:0;">Systems, not one-offs. Every deliverable is documented so your team, or your next designer, can maintain the standard without starting from scratch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:#FFC20E;padding:100px 60px;text-align:center;position:relative;overflow:hidden;">
+  <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;pointer-events:none;">
+    <img src="uploads/5.png" alt="" style="width:100%;opacity:0.09;display:block;">
+  </div>
+  <div style="max-width:640px;margin:0 auto;position:relative;z-index:1;" data-reveal="">
+    <h2 style="font-family:'Unna',serif;font-size:clamp(36px,4vw,54px);line-height:1.1;color:#3B1740;margin:0 0 20px;">If your brand has substance,<br><em>I can help it show.</em></h2>
+    <p style="font-family:'Nunito Sans',sans-serif;font-size:18px;line-height:1.8;color:rgba(59,23,64,0.75);margin:0 0 40px;">Let's talk about where the disconnect is, and whether we're the right fit.</p>
+    <a href="Contact.dc.html" style="display:inline-flex;align-items:center;gap:12px;font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;color:#F7F0E3;background:#3B1740;padding:16px 40px;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;">Start the Conversation →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#160E1C;padding:72px 60px 40px;">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:56px;margin-bottom:56px;">
+      <div>
+        <img src="uploads/os-logo-dark-gray-purple.svg" alt="Osanna Studio" style="height:56px;width:auto;display:block;margin-bottom:20px;">
+        <p style="font-family:'Nunito Sans',sans-serif;font-size:14px;line-height:1.8;color:rgba(247,240,227,0.42);max-width:240px;margin:0;">Turning fragmented communication into cohesive brand presence. Working with clients worldwide.</p>
+      </div>
+      <div>
+        <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 20px;">Navigate</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="Home.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">Home</a>
+          <a href="Services.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">Services</a>
+          <a href="About.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">About</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 20px;">Services</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="Services.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">The Anchor</a>
+          <a href="Services.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">The Platform</a>
+          <a href="Services.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">The Velocity</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 20px;">Connect</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="Contact.dc.html" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(247,240,227,0.6);text-decoration:none;">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(247,240,227,0.07);padding-top:28px;display:flex;justify-content:space-between;align-items:center;">
+      <p style="font-family:'Nunito Sans',sans-serif;font-size:12px;color:rgba(247,240,227,0.25);margin:0;">© 2025 Osanna Studio. Raised under House of Osanna LLC. All rights reserved.</p>
+      <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#C84060;margin:0;letter-spacing:0.15em;text-transform:uppercase;">Radiate Your Purpose</p>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const reveals = document.querySelectorAll('[data-reveal]');
+    reveals.forEach(el => {
+      const delay = parseInt(el.dataset.revealDelay || '0');
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = `opacity 0.75s ${delay}ms ease, transform 0.75s ${delay}ms ease`;
+    });
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => io.observe(el));
+    const nav = document.getElementById('main-nav');
+    const onScroll = () => {
+      if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.35)' : 'none';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    this._cleanup = () => { io.disconnect(); window.removeEventListener('scroll', onScroll); };
+  }
+  componentWillUnmount() { if (this._cleanup) this._cleanup(); }
+}
+</script>
+</body>
+</html>
