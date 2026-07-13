@@ -196,7 +196,21 @@ class Component extends DCLogic {
       isNotSubmitted: !this.state.submitted,
       handleSubmit: (e) => {
         e.preventDefault();
-        this.setState({ submitted: true });
+        const form = e.target;
+        const data = new FormData(form);
+        fetch("https://formspree.io/f/YOUR_FORM_ID", {
+          method: "POST",
+          body: data,
+          headers: { "Accept": "application/json" }
+        }).then((res) => {
+          if (res.ok) {
+            this.setState({ submitted: true });
+          } else {
+            alert("Something went wrong sending your message. Please email hello@osanna.studio directly.");
+          }
+        }).catch(() => {
+          alert("Something went wrong sending your message. Please email hello@osanna.studio directly.");
+        });
       }
     };
   }
