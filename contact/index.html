@@ -87,7 +87,7 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F7F0E3; c
   <div style="max-width:800px;margin:0 auto;" data-reveal="">
     <sc-if value="{{ isSubmitted }}" hint-placeholder-val="{{ false }}">
       <!-- Thank you state -->
-      <div style="text-align:center;padding:80px 40px;background:#EDE7D5;border:2px solid #3B1740;">
+      <div style="text-align:center;padding:80px 40px;background:#EDE7D5;border:1px solid #3B1740;">
         <img src="/uploads/os-classica-tagline-black.png" alt="" style="height:80px;width:auto;display:block;margin:0 auto 32px;">
         <h2 style="font-family:'Unna',serif;font-size:clamp(32px,3.5vw,44px);color:#3E6540;margin:0 0 16px;line-height:1.2;">Message received.</h2>
         <p style="font-family:'Nunito Sans',sans-serif;font-size:17px;line-height:1.8;color:rgba(26,26,26,0.65);max-width:460px;margin:0 auto 36px;">We'll review your message and get back to you within 2 business days. In the meantime, feel free to explore our work.</p>
@@ -130,7 +130,7 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F7F0E3; c
           <div>
             <button type="submit" style="display:inline-flex;align-items:center;gap:12px;font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;color:#3B1740;background:#FFC20E;padding:16px 40px;border:none;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;">Send it over →</button>
           </div>
-          <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+          <input type="text" name="_gotcha" style="position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;" tabindex="-1" autocomplete="off">
         </form>
       </div>
     </sc-if>
