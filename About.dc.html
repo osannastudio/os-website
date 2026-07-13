@@ -16,14 +16,38 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F7F0E3; color: #1A1A1A; text-wrap: pretty; }
 </style>
+
+<style>
+/* --- Mobile responsiveness patch --- */
+#nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:26px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;}
+#nav-toggle span{display:block;width:100%;height:2px;background:#F7F0E3;border-radius:2px;}
+@media (max-width:860px){
+  #main-nav{padding:0 20px !important;}
+  #nav-toggle{display:flex !important;}
+  #nav-links{
+    position:fixed !important;top:76px;left:0;right:0;bottom:0;
+    background:#3B1740 !important;
+    flex-direction:column !important;align-items:flex-start !important;
+    padding:32px 28px !important;gap:26px !important;
+    transform:translateX(100%);transition:transform 0.3s ease;
+    z-index:99;overflow-y:auto;
+  }
+  #nav-links.nav-open{transform:translateX(0);}
+  #nav-links a{font-size:15px !important;}
+  .os-grid{grid-template-columns:1fr !important;gap:24px !important;}
+  .os-pad{padding-left:20px !important;padding-right:20px !important;}
+  h1{font-size:clamp(30px,8vw,42px) !important;}
+}
+</style>
 </helmet>
 
 <!-- NAV -->
-<nav id="main-nav" style="position:sticky;top:0;z-index:100;background:#3B1740;padding:0 60px;height:76px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow 0.3s ease;">
+<nav id="main-nav" class="os-pad" style="position:sticky;top:0;z-index:100;background:#3B1740;padding:0 60px;height:76px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow 0.3s ease;">
   <a href="Home.dc.html" style="display:block;text-decoration:none;">
     <img src="uploads/os-logo-aubergine.svg" alt="Osanna Studio" style="height:52px;width:auto;display:block;">
   </a>
-  <div style="display:flex;align-items:center;gap:36px;">
+  <button id="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <div id="nav-links" style="display:flex;align-items:center;gap:36px;">
     <a href="Home.dc.html" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;color:rgba(247,240,227,0.8);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Home</a>
     <a href="Services.dc.html" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;color:rgba(247,240,227,0.8);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Services</a>
     <a href="About.dc.html" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;color:#FFC20E;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">About</a>
@@ -32,7 +56,7 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F7F0E3; c
 </nav>
 
 <!-- PAGE HERO -->
-<section style="background:#3B1740;padding:88px 60px;position:relative;overflow:hidden;min-height:340px;display:flex;align-items:center;">
+<section class="os-pad" style="background:#3B1740;padding:88px 60px;position:relative;overflow:hidden;min-height:340px;display:flex;align-items:center;">
   <div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:52vw;max-width:640px;pointer-events:none;">
     <img src="uploads/5.png" alt="" style="width:100%;opacity:0.07;display:block;">
   </div>
@@ -47,7 +71,7 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F7F0E3; c
 
 
 <!-- BRIDGE -->
-<section style="background:#F7F0E3;padding:80px 60px;">
+<section class="os-pad" style="background:#F7F0E3;padding:80px 60px;">
   <div style="max-width:800px;margin:0 auto;text-align:center;" data-reveal="">
     <p style="font-family:'Nunito Sans',sans-serif;font-size:18px;line-height:1.85;color:rgba(59,23,64,0.72);margin:0 0 20px;">A confusing website, a message that shifts from platform to platform, a brand that looks like three different companies. We help close that gap.</p>
 
@@ -55,15 +79,15 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F7F0E3; c
 </section>
 
 <!-- ABOUT PRIYA -->
-<section style="background:#3B1740;padding:100px 60px;position:relative;overflow:hidden;">
+<section class="os-pad" style="background:#3B1740;padding:100px 60px;position:relative;overflow:hidden;">
   <div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:44vw;max-width:560px;pointer-events:none;">
     <img src="uploads/5.png" alt="" style="width:100%;opacity:0.06;display:block;">
   </div>
-  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:340px 1fr;gap:80px;align-items:start;position:relative;z-index:1;" data-reveal="">
+  <div class="os-grid" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:340px 1fr;gap:80px;align-items:start;position:relative;z-index:1;" data-reveal="">
     <!-- Photo -->
     <div>
       <div style="aspect-ratio:3/4;overflow:hidden;">
-        <img src="uploads/priya-photo.jpg" alt="Priya Osanna Smith" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+        <img src="uploads/My pictures (2).jpg" alt="Priya Osanna Smith" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
       </div>
     </div>
     <!-- Bio text -->
@@ -83,8 +107,8 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F7F0E3; c
 </section>
 
 <!-- ORIGIN + MEANING (2 columns) -->
-<section style="background:#F7F0E3;padding:100px 60px;">
-  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;">
+<section class="os-pad" style="background:#F7F0E3;padding:100px 60px;">
+  <div class="os-grid" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;">
     <div data-reveal="" data-reveal-delay="0">
       <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#C84060;letter-spacing:0.25em;text-transform:uppercase;margin:0 0 20px;">The Origin</p>
       <h2 style="font-family:'Unna',serif;font-size:clamp(28px,3vw,38px);line-height:1.2;color:#3E6540;margin:0 0 24px;">Scattered problems.<br><em>One proven system.</em></h2>
@@ -99,13 +123,13 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F7F0E3; c
 </section>
 
 <!-- HOW WE WORK -->
-<section style="background:#3B1740;padding:100px 60px;">
+<section class="os-pad" style="background:#3B1740;padding:100px 60px;">
   <div style="max-width:1240px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:64px;" data-reveal="">
       <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.25em;text-transform:uppercase;margin:0 0 20px;">How We Work</p>
       <h2 style="font-family:'Unna',serif;font-size:clamp(32px,3.5vw,46px);line-height:1.1;color:#F7F0E3;margin:0;">Four principles.<br><em>Every engagement.</em></h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+    <div class="os-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
       <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,194,14,0.15);padding:44px 40px;" data-reveal="" data-reveal-delay="0">
         <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#FFC20E;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 14px;">Directional, not dictatorial</p>
         <p style="font-family:'Nunito Sans',sans-serif;font-size:15px;line-height:1.8;color:rgba(247,240,227,0.68);margin:0;">We guide, we don't dictate. Documentation and strategy are built as directional guidance, idea pools you can run with, not rigid checklists that box in your team's creative judgment.</p>
@@ -127,7 +151,7 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F7F0E3; c
 </section>
 
 <!-- CTA -->
-<section style="background:#FFC20E;padding:100px 60px;text-align:center;position:relative;overflow:hidden;">
+<section class="os-pad" style="background:#FFC20E;padding:100px 60px;text-align:center;position:relative;overflow:hidden;">
   <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;pointer-events:none;">
     <img src="uploads/5.png" alt="" style="width:100%;opacity:0.09;display:block;">
   </div>
@@ -139,9 +163,9 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F7F0E3; c
 </section>
 
 <!-- FOOTER -->
-<footer style="background:#160E1C;padding:72px 60px 40px;">
+<footer class="os-pad" style="background:#160E1C;padding:72px 60px 40px;">
   <div style="max-width:1240px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:56px;margin-bottom:56px;">
+    <div class="os-grid" style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:56px;margin-bottom:56px;">
       <div>
         <img src="uploads/os-logo-dark-gray-purple.svg" alt="Osanna Studio" style="height:56px;width:auto;display:block;margin-bottom:20px;">
         <p style="font-family:'Nunito Sans',sans-serif;font-size:14px;line-height:1.8;color:rgba(247,240,227,0.42);max-width:240px;margin:0;">Turning fragmented communication into cohesive brand presence. Working with clients worldwide.</p>
@@ -175,6 +199,18 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F7F0E3; c
     </div>
   </div>
 </footer>
+
+<script>
+document.addEventListener('click', function(e){
+  if (e.target && e.target.closest && e.target.closest('#nav-toggle')) {
+    var links = document.getElementById('nav-links');
+    if (links) links.classList.toggle('nav-open');
+  } else if (e.target && e.target.tagName === 'A') {
+    var links = document.getElementById('nav-links');
+    if (links) links.classList.remove('nav-open');
+  }
+});
+</script>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
