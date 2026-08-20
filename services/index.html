@@ -36,7 +36,7 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="icon" type="image/png" href="/uploads/os-favicon-fig.png">
+<link rel="icon" type="image/png" href="uploads/os-favicon-fig.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Nunito+Sans:wght@300;400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -124,7 +124,7 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
 </section>
 
 <!-- SERVICE 01: THE ANCHOR -->
-<section style="background:#264837;padding:100px 60px;position:relative;overflow:hidden;">
+<section id="anchor" style="background:#264837;padding:100px 60px;position:relative;overflow:hidden;scroll-margin-top:76px;">
   <div style="position:absolute;left:-100px;top:-100px;width:480px;pointer-events:none;">
     <img src="/uploads/OS-logo-alabaster.svg" alt="" style="width:100%;opacity:0.05;display:block;">
   </div>
@@ -153,7 +153,7 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
 </section>
 
 <!-- SERVICE 02: THE PLATFORM -->
-<section style="background:#2A1A26;padding:100px 60px;position:relative;overflow:hidden;">
+<section id="platform" style="background:#2A1A26;padding:100px 60px;position:relative;overflow:hidden;scroll-margin-top:76px;">
   <div style="position:absolute;right:-100px;top:-100px;width:480px;pointer-events:none;">
     <img src="/uploads/OS-logo-alabaster.svg" alt="" style="width:100%;opacity:0.05;display:block;">
   </div>
@@ -182,7 +182,7 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
 </section>
 
 <!-- SERVICE 03: THE VELOCITY -->
-<section style="background:#264837;padding:100px 60px;position:relative;overflow:hidden;">
+<section id="velocity" style="background:#264837;padding:100px 60px;position:relative;overflow:hidden;scroll-margin-top:76px;">
   <div style="position:absolute;left:-100px;top:-100px;width:480px;pointer-events:none;">
     <img src="/uploads/OS-logo-alabaster.svg" alt="" style="width:100%;opacity:0.05;display:block;">
   </div>
@@ -319,9 +319,9 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
       <div>
         <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#D4A373;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 20px;">Services</p>
         <div style="display:flex;flex-direction:column;gap:12px;">
-          <a href="/services/" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(249,248,245,0.6);text-decoration:none;">The Anchor</a>
-          <a href="/services/" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(249,248,245,0.6);text-decoration:none;">The Platform</a>
-          <a href="/services/" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(249,248,245,0.6);text-decoration:none;">The Velocity</a>
+          <a href="/services/#anchor" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(249,248,245,0.6);text-decoration:none;">The Anchor</a>
+          <a href="/services/#platform" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(249,248,245,0.6);text-decoration:none;">The Platform</a>
+          <a href="/services/#velocity" style="font-family:'Nunito Sans',sans-serif;font-size:14px;color:rgba(249,248,245,0.6);text-decoration:none;">The Velocity</a>
         </div>
       </div>
       <div>
@@ -341,6 +341,14 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   componentDidMount() {
+    if (window.location.hash) {
+      const target = document.getElementById(window.location.hash.slice(1));
+      if (target) {
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 76, behavior: 'auto' });
+        });
+      }
+    }
     const reveals = document.querySelectorAll('[data-reveal]');
     reveals.forEach(el => {
       const delay = parseInt(el.dataset.revealDelay || '0');
