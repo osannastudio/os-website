@@ -1,14 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — Brand, Web & Creative | Osanna Studio</title>
+<meta name="description" content="Three disciplines, one cohesive system: The Anchor (identity and messaging), The Platform (digital design and development), The Velocity (custom creative solutions).">
+<link rel="canonical" href="https://osanna.studio/services/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#2A1A26">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Osanna Studio">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Services — Brand, Web & Creative | Osanna Studio">
+<meta property="og:description" content="Three disciplines, one cohesive system: The Anchor (identity and messaging), The Platform (digital design and development), The Velocity (custom creative solutions).">
+<meta property="og:url" content="https://osanna.studio/services/">
+<meta property="og:image" content="https://osanna.studio/uploads/os-og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Osanna Studio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Services — Brand, Web & Creative | Osanna Studio">
+<meta name="twitter:description" content="Three disciplines, one cohesive system: The Anchor (identity and messaging), The Platform (digital design and development), The Velocity (custom creative solutions).">
+<meta name="twitter:image" content="https://osanna.studio/uploads/os-og-card.jpg">
+
 <script src="/support.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Do I need all three disciplines, or can I start with one?","acceptedAnswer":{"@type":"Answer","text":"Most clients start with one, usually the Anchor if messaging is the core issue, or the Platform if the identity is solid but the website isn't. We'll tell you honestly which one will move the needle first."}},
+{"@type":"Question","name":"How is this different from hiring a freelancer?","acceptedAnswer":{"@type":"Answer","text":"A freelancer solves one piece. We work from a single framework across strategy, design, and content, so the pieces are built to work together from the start, not reconciled after the fact."}},
+{"@type":"Question","name":"What size businesses do you work with?","acceptedAnswer":{"@type":"Answer","text":"Early-stage startups building their first real identity, and established businesses whose brand has grown more complicated than their message. If you're unsure which camp you're in, the discovery call will clarify it."}},
+{"@type":"Question","name":"What does a project typically start at?","acceptedAnswer":{"@type":"Answer","text":"Investment varies by scope and discipline. As a benchmark at the smallest end, a single long-form blog post starts at $800; full Anchor, Platform, or Velocity engagements are scoped from there. Book a discovery call and we'll give you a clear, honest number, no vague \"it depends\" answers."}}
+]}
+</script>
 </head>
 <body>
 <x-dc>
 <helmet>
-<link rel="icon" type="image/jpeg" href="/uploads/os-favicon.jpg">
+<link rel="icon" type="image/png" href="/uploads/os-favicon-fig.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Nunito+Sans:wght@300;400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -44,6 +72,20 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
   [style*="padding: 32px 28px"] { padding: 28px 22px !important; }
   [style*="aspect-ratio"] { max-width: 100%; }
 }
+
+/* ---- mobile nav (burger) + mobile ordering ---- */
+@media (max-width: 960px) {
+  #platform-grid > div:first-child { order: 2; }
+}
+@media (max-width: 760px) {
+  nav#main-nav { height: 76px !important; padding: 12px 20px !important; flex-wrap: nowrap !important; row-gap: 0 !important; }
+  #nav-burger { display: flex !important; }
+  #nav-links { display: none !important; }
+  #nav-links[data-open="true"] { display: flex !important; flex-direction: column; align-items: stretch !important; gap: 0 !important; position: absolute; top: 100%; left: 0; right: 0; background: #2A1A26; padding: 6px 20px 24px; border-top: 1px solid rgba(212,163,115,0.18); box-shadow: 0 18px 34px rgba(0,0,0,0.34); }
+  #nav-links[data-open="true"] a { padding: 16px 0 !important; font-size: 14px !important; border-bottom: 1px solid rgba(249,248,245,0.07); }
+  #nav-links[data-open="true"] a:last-child { border-bottom: none; text-align: center; padding: 16px 0 !important; margin-top: 14px; }
+  #hero-inner { padding: 88px 20px 96px !important; }
+}
 </style>
 </helmet>
 
@@ -52,7 +94,12 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
   <a href="/" style="display:block;text-decoration:none;">
     <img src="/uploads/OS-logo-wordmark-stacked-alabaster.svg" alt="Osanna Studio" style="height:52px;width:auto;display:block;">
   </a>
-  <div style="display:flex;align-items:center;gap:36px;">
+  <button id="nav-burger" aria-label="Menu" aria-expanded="false" style="display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;padding:0;cursor:pointer;margin-left:auto;">
+    <span data-bar="" style="display:block;width:24px;height:2px;background:#F9F8F5;transition:transform 0.3s ease,opacity 0.3s ease;"></span>
+    <span data-bar="" style="display:block;width:24px;height:2px;background:#F9F8F5;transition:transform 0.3s ease,opacity 0.3s ease;"></span>
+    <span data-bar="" style="display:block;width:24px;height:2px;background:#F9F8F5;transition:transform 0.3s ease,opacity 0.3s ease;"></span>
+  </button>
+  <div id="nav-links" style="display:flex;align-items:center;gap:36px;">
     <a href="/" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;color:rgba(249,248,245,0.8);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Home</a>
     <a href="/services/" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;color:#D4A373;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Services</a>
     <a href="/about/" style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;color:rgba(249,248,245,0.8);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">About</a>
@@ -77,7 +124,7 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
 </section>
 
 <!-- SERVICE 01: THE ANCHOR -->
-<section style="background:#2A1A26;padding:100px 60px;position:relative;overflow:hidden;">
+<section style="background:#264837;padding:100px 60px;position:relative;overflow:hidden;">
   <div style="position:absolute;left:-100px;top:-100px;width:480px;pointer-events:none;">
     <img src="/uploads/OS-logo-alabaster.svg" alt="" style="width:100%;opacity:0.05;display:block;">
   </div>
@@ -106,11 +153,11 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
 </section>
 
 <!-- SERVICE 02: THE PLATFORM -->
-<section style="background:#264837;padding:100px 60px;position:relative;overflow:hidden;">
+<section style="background:#2A1A26;padding:100px 60px;position:relative;overflow:hidden;">
   <div style="position:absolute;right:-100px;top:-100px;width:480px;pointer-events:none;">
     <img src="/uploads/OS-logo-alabaster.svg" alt="" style="width:100%;opacity:0.05;display:block;">
   </div>
-  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:start;position:relative;z-index:1;" data-reveal="">
+  <div id="platform-grid" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:start;position:relative;z-index:1;" data-reveal="">
     <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,163,115,0.18);padding:44px 40px;">
       <p style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:#D4A373;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 24px;">What's included</p>
       <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;">
@@ -135,7 +182,7 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
 </section>
 
 <!-- SERVICE 03: THE VELOCITY -->
-<section style="background:#2A1A26;padding:100px 60px;position:relative;overflow:hidden;">
+<section style="background:#264837;padding:100px 60px;position:relative;overflow:hidden;">
   <div style="position:absolute;left:-100px;top:-100px;width:480px;pointer-events:none;">
     <img src="/uploads/OS-logo-alabaster.svg" alt="" style="width:100%;opacity:0.05;display:block;">
   </div>
@@ -213,7 +260,7 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
           <span data-faq-icon="" style="font-family:'Quicksand',sans-serif;font-size:20px;color:#D4A373;flex-shrink:0;transition:transform 0.3s ease;">+</span>
         </button>
         <div data-faq-body="" style="overflow:hidden;max-height:0;transition:max-height 0.4s ease,padding 0.4s ease;padding:0;">
-          <p style="font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.8;color:rgba(42,26,38,0.72);padding-bottom:28px;margin:0;">A freelancer solves one piece. We work from a single framework across strategy, design, and content — so the pieces are built to work together from the start, not reconciled after the fact.</p>
+          <p style="font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.8;color:rgba(42,26,38,0.72);padding-bottom:28px;margin:0;">A freelancer solves one piece. We work from a single framework across strategy, design, and content, so the pieces are built to work together from the start, not reconciled after the fact.</p>
         </div>
       </div>
       <div data-faq-item="" style="border-bottom:1px solid rgba(42,26,38,0.1);">
@@ -231,7 +278,7 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
           <span data-faq-icon="" style="font-family:'Quicksand',sans-serif;font-size:20px;color:#D4A373;flex-shrink:0;transition:transform 0.3s ease;">+</span>
         </button>
         <div data-faq-body="" style="overflow:hidden;max-height:0;transition:max-height 0.4s ease,padding 0.4s ease;padding:0;">
-          <p style="font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.8;color:rgba(42,26,38,0.72);padding-bottom:28px;margin:0;">Investment varies by scope and discipline. Book a discovery call and we'll give you a clear, honest number, no vague "it depends" answers.</p>
+          <p style="font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.8;color:rgba(42,26,38,0.72);padding-bottom:28px;margin:0;">Investment varies by scope and discipline. As a benchmark at the smallest end, a single long-form blog post starts at $800; full Anchor, Platform, or Velocity engagements are scoped from there. Book a discovery call and we'll give you a clear, honest number, no vague "it depends" answers.</p>
         </div>
       </div>
     </div>
@@ -312,6 +359,29 @@ class Component extends DCLogic {
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => io.observe(el));
 
+    const burger = document.getElementById('nav-burger');
+    const navLinks = document.getElementById('nav-links');
+    let navOpen = false;
+    const setNav = (open) => {
+      navOpen = open;
+      if (navLinks) navLinks.setAttribute('data-open', open ? 'true' : 'false');
+      if (burger) {
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        const bars = burger.querySelectorAll('[data-bar]');
+        if (bars.length === 3) {
+          bars[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : 'none';
+          bars[1].style.opacity = open ? '0' : '1';
+          bars[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : 'none';
+        }
+      }
+    };
+    const onBurger = (e) => { e.preventDefault(); setNav(!navOpen); };
+    if (burger) burger.addEventListener('click', onBurger);
+    if (navLinks) navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNav(false)));
+    const onResize = () => { if (window.innerWidth > 760 && navOpen) setNav(false); };
+    window.addEventListener('resize', onResize);
+    setNav(false);
+
     const nav = document.getElementById('main-nav');
     const onScroll = () => {
       if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.35)' : 'none';
@@ -343,7 +413,7 @@ class Component extends DCLogic {
       });
     });
 
-    this._cleanup = () => { io.disconnect(); window.removeEventListener('scroll', onScroll); };
+    this._cleanup = () => { io.disconnect(); window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onResize); if (burger) burger.removeEventListener('click', onBurger); };
   }
   componentWillUnmount() { if (this._cleanup) this._cleanup(); }
 }
