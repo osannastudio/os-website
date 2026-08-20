@@ -28,7 +28,7 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="icon" type="image/png" href="/uploads/os-favicon-fig.png">
+<link rel="icon" type="image/png" href="uploads/os-favicon-fig.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Nunito+Sans:wght@300;400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -142,6 +142,8 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
         <p style="font-family:'Nunito Sans',sans-serif;font-size:17px;line-height:1.75;color:rgba(42,26,38,0.6);margin:0 0 48px;">Fill in the form and we'll come prepared.</p>
 
         <form onSubmit="{{ handleSubmit }}" style="display:flex;flex-direction:column;gap:28px;">
+          <input type="hidden" name="_subject" value="New enquiry — Osanna Studio website">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
             <div>
               <label style="display:block;font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;color:rgba(42,26,38,0.5);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">Name *</label>
@@ -170,7 +172,10 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
             <textarea name="message" required="" rows="5" placeholder="Tell us about the disconnect, your website, your messaging, your content, or all of the above..." style="width:100%;padding:14px 18px;border:1.5px solid rgba(42,26,38,0.2);background:#F1EFE9;font-family:'Nunito Sans',sans-serif;font-size:15px;color:#2A1A26;outline:none;resize:vertical;min-height:140px;" style-focus="border-color:#2A1A26;"></textarea>
           </div>
           <div>
-            <button type="submit" style="display:inline-flex;align-items:center;gap:12px;font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;color:#2A1A26;background:#D4A373;padding:16px 40px;border:none;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;">Send it over →</button>
+            <button type="submit" disabled="{{ isSending }}" style="display:inline-flex;align-items:center;gap:12px;font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;color:#2A1A26;background:#D4A373;padding:16px 40px;border:none;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;">Send it over →</button>
+            <sc-if value="{{ hasError }}" hint-placeholder-val="{{ false }}">
+              <p style="font-family:'Nunito Sans',sans-serif;font-size:14px;line-height:1.6;color:#8C3A2B;margin:16px 0 0;">{{ errorMsg }}</p>
+            </sc-if>
           </div>
         </form>
       </div>
@@ -218,15 +223,37 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { submitted: false };
+  state = { submitted: false, sending: false, error: '' };
 
   renderVals() {
     return {
       isSubmitted: this.state.submitted,
       isNotSubmitted: !this.state.submitted,
+      sendLabel: this.state.sending ? 'Sending...' : 'Send Message',
+      isSending: this.state.sending,
+      errorMsg: this.state.error,
+      hasError: !!this.state.error,
       handleSubmit: (e) => {
         e.preventDefault();
-        this.setState({ submitted: true });
+        if (this.state.sending) return;
+        const form = e.target;
+        const data = new FormData(form);
+        this.setState({ sending: true, error: '' });
+        fetch('https://formspree.io/f/mlgqeljy', {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' }
+        })
+          .then(r => r.json().then(j => ({ ok: r.ok, j })))
+          .then(({ ok, j }) => {
+            if (ok) {
+              this.setState({ submitted: true, sending: false });
+            } else {
+              const msg = (j && j.errors && j.errors.map(x => x.message).join(', ')) || 'Something went wrong. Please try again or email hello@osanna.studio.';
+              this.setState({ sending: false, error: msg });
+            }
+          })
+          .catch(() => this.setState({ sending: false, error: 'Network error. Please try again or email hello@osanna.studio.' }));
       }
     };
   }
