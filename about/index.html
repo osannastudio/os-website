@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About the Studio | Osanna Studio</title>
+<title>About | Osanna Studio</title>
 <meta name="description" content="The practice behind every scattered-to-cohesive shift. Meet the studio, our principles, and how we work with the businesses we partner with.">
 <link rel="canonical" href="https://osanna.studio/about/">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Osanna Studio">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="About the Studio | Osanna Studio">
+<meta property="og:title" content="About | Osanna Studio">
 <meta property="og:description" content="The practice behind every scattered-to-cohesive shift. Meet the studio, our principles, and how we work with the businesses we partner with.">
 <meta property="og:url" content="https://osanna.studio/about/">
 <meta property="og:image" content="https://osanna.studio/uploads/os-og-card.jpg">
@@ -19,7 +19,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Osanna Studio">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About the Studio | Osanna Studio">
+<meta name="twitter:title" content="About | Osanna Studio">
 <meta name="twitter:description" content="The practice behind every scattered-to-cohesive shift. Meet the studio, our principles, and how we work with the businesses we partner with.">
 <meta name="twitter:image" content="https://osanna.studio/uploads/os-og-card.jpg">
 
@@ -29,7 +29,9 @@
 <x-dc>
 <helmet>
 <link rel="icon" type="image/png" href="/uploads/os-favicon-v2.png">
-<link rel="apple-touch-icon" href="/uploads/os-apple-touch-icon.png">
+<link rel="apple-touch-icon" href="/uploads/os-app-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#2A1A26">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Nunito+Sans:wght@300;400;600;700&amp;family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -66,6 +68,14 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
   [style*="aspect-ratio"] { max-width: 100%; }
 }
 
+/* ---- mobile landscape: keep desktop CTA composition ---- */
+@media (max-width: 960px) and (orientation: landscape) {
+  #cta-row { justify-content: flex-end !important; }
+  #cta-row > div { max-width: 58% !important; }
+  #cta-mark, #contact-mark { display: block !important; }
+  #cta-row a[style*="inline-flex"] { width: auto !important; }
+}
+
 /* ---- mobile nav (burger) + mobile ordering ---- */
 @media (max-width: 960px) {
   #platform-grid > div:first-child { order: 2; }
@@ -80,6 +90,14 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
   #hero-inner { padding: 88px 20px 96px !important; }
 }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ERWRYFHQRJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ERWRYFHQRJ');
+</script>
 </helmet>
 
 <!-- NAV -->
@@ -192,11 +210,11 @@ body { margin: 0; font-family: 'Nunito Sans', sans-serif; background: #F9F8F5; c
 
 <!-- CTA -->
 <section style="background:#D4A373;padding:100px 60px;position:relative;overflow:hidden;">
-  <div style="position:absolute;left:-140px;top:50%;transform:translateY(-50%);width:46vw;max-width:540px;pointer-events:none;">
+  <div id="cta-mark" style="position:absolute;left:-140px;top:50%;transform:translateY(-50%);width:46vw;max-width:540px;pointer-events:none;">
     <img src="/uploads/OS-logo-fig-v2.svg" alt="" style="width:100%;opacity:0.09;display:block;">
   </div>
   <div style="position:absolute;inset:0;background:linear-gradient(to left,#D4A373 46%,transparent);pointer-events:none;"></div>
-  <div style="max-width:1240px;margin:0 auto;position:relative;z-index:1;display:flex;justify-content:flex-end;">
+  <div id="cta-row" style="max-width:1240px;margin:0 auto;position:relative;z-index:1;display:flex;justify-content:flex-end;">
     <div style="max-width:560px;" data-reveal="">
       <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(36px,4vw,54px);line-height:1.1;color:#2A1A26;margin:0 0 20px;">If your brand has substance,<br><em>we can help it show.</em></h2>
       <p style="font-family:'Nunito Sans',sans-serif;font-size:18px;line-height:1.8;color:rgba(42,26,38,0.75);margin:0 0 40px;">Let's talk about where the disconnect is, and whether we're the right fit.</p>
