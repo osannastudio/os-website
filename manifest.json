@@ -1,0 +1,24 @@
+{
+  "name": "Osanna Studio",
+  "short_name": "Osanna",
+  "description": "Brand strategy, digital design and creative solutions.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#2A1A26",
+  "theme_color": "#2A1A26",
+  "icons": [
+    {
+      "src": "/uploads/os-app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/uploads/os-app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
