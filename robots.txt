@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://osanna.studio/sitemap.xml
